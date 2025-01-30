@@ -4,11 +4,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const toast = useToast({
     component: 'div',
-    transition: 'Vue-Toastification__bounce',
+    transition: 'Vue-Toastification__slide',
     newestOnTop: true,
     position: 'top-right',
-    duration: 5000,
-    closeOnClick: true,   
+    duration: 3000,
+    queue: false, 
+    dismissible: true,  
   });
   return {
     provide: {
