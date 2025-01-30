@@ -56,8 +56,10 @@ userController.login = async (req, res) => {
  
       return  res.cookie('token', token, {
         httpOnly: true, 
-        sameSite: 'Strict',
-        maxAge: 3600000, 
+        
+        maxAge: 3600000,
+        secure: true, 
+        sameSite: 'None', 
       }).status(200).json({ message: 'Login successful' ,user});
     } catch (error) {
       console.error(error);
