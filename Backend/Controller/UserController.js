@@ -71,7 +71,7 @@ userController.login = async (req, res) => {
     try {
       
       return res.clearCookie('token',{httpOnly: true,
-        maxAge: 3600000,
+        
         secure: true,
         sameSite: 'None',
         }).status(200).json({ message: 'Logout successful' });
