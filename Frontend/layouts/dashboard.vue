@@ -26,10 +26,16 @@
 <script setup>
 import { useRouter } from "vue-router";
 import Cookies from "universal-cookie";
+import { useNuxtApp } from "#app";
+
+const { $axios } = useNuxtApp();
 const cookies = new Cookies();
 const router = useRouter();
-const logout = () => {
+const logout =async () => {
+
+  await $axios.post("/user/logout");
   cookies.remove("user");
+
   router.push("/");
 };
 </script>

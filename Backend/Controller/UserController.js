@@ -67,6 +67,15 @@ userController.login = async (req, res) => {
     }
   };
 
+  userController.logout= async (req, res) => {
+    try {
+      
+      return res.clearCookie('token',{httpOnly:true}).status(200).json({ message: 'Logout successful' });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: 'Server error' });
+    }
+  };
   
   
   
