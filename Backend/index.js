@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(cors({
-  origin: 'https://gym-managment-kappa.vercel.app', 
+  origin: 'https://gym-managment-zclb.vercel.app', 
   credentials: true, 
 }));
 
